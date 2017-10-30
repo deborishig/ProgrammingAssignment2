@@ -1,6 +1,5 @@
-# See README.md for instructions on running the code and output from it
-# The assignment states that running the code is not part of the grading 
-# but I have the instructions anyway.
+# Read README.md for instructions on running the code and output from it
+# I have run this code on R Studio
 
 # makeCacheMatrix is a function that returns a list of functions
 # Its puspose is to store a martix and a cached value of the inverse of the 
@@ -17,11 +16,10 @@
 # makeCacheMatrix function
 makeCacheMatrix <- function(x = numeric()) {
   
-  # holds the cached value or NULL if nothing is cached
-  # initially nothing is cached so set it to NULL
+  # There's nothing cached initially hence setting cache to null
   cache <- NULL
   
-  # store a matrix
+  # Setting up a matrix
   setMatrix <- function(newValue) {
     x <<- newValue
     # since the matrix is assigned a new value, flush the cache
@@ -43,7 +41,7 @@ makeCacheMatrix <- function(x = numeric()) {
     cache
   }
   
-  # return a list. Each named element of the list is a function
+  # Instantiating a list. Each named element of the list is a function
   list(setMatrix = setMatrix, getMatrix = getMatrix, cacheInverse = cacheInverse, getInverse = getInverse)
 }
 
@@ -64,6 +62,6 @@ cacheSolve <- function(y, ...) {
   inverse <- solve(data)
   y$cacheInverse(inverse)
   
-  # return the inverse
+  # Print the inverse
   inverse
 }
